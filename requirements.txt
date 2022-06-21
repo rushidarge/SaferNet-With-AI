@@ -6,3 +6,4 @@ streamlit==1.5.1
 tensorflow
 opencv-python-headless
 pillow
+scikit-image
