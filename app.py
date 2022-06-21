@@ -1,9 +1,10 @@
 import streamlit as st
+import tensorflow
 from tensorflow.keras.models import load_model
-from PIL import Image
-# from tensorflow.keras.preprocessing.image import img_to_array, load_img
 import numpy as np
 import time
+import cv2
+
 
 @st.cache(allow_output_mutation=True)
 def get_model():
@@ -12,9 +13,8 @@ def get_model():
     
 def predict(image):
         loaded_model = get_model()
-        image = Image(image)
-        # image = img_to_array(image)
-        image = image/255.0
+        image = cv2.imread(image)
+        image = cv2.resize(image/255, (224, 224))
         image = np.reshape(image,[1,224,224,3])
 
         classes = loaded_model.predict_classes(image)
