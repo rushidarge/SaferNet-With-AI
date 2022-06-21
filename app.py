@@ -1,6 +1,7 @@
 import streamlit as st
 import tensorflow
 from tensorflow.keras.models import load_model
+from skimage.transform import resize
 import numpy as np
 import time
 import cv2
@@ -12,36 +13,42 @@ def get_model():
         model = load_model('MN21.h5')
         return model 
     
-def predict(image):
-        loaded_model = get_model()
-        size = (224,224)    
-        image = ImageOps.fit(image, size, Image.ANTIALIAS)
-        image = np.asarray(image)/255
-        # image = cv2.imread(image)
-        # image = cv2.resize(image/255, (224, 224))
-        image = np.reshape(image,[1,224,224,3])
+# def predict(image):
+#         loaded_model = get_model()
+#         size = (224,224)    
+#         image = ImageOps.fit(image, size, Image.ANTIALIAS)
+#         image = np.asarray(image)/255
+#         # image = cv2.imread(image)
+#         # image = cv2.resize(image/255, (224, 224))
+#         image = np.reshape(image,[1,224,224,3])
 
-        classes = loaded_model.predict_classes(image)
-        return classes 
+#         classes = loaded_model.predict_classes(image)
+#         return classes 
 
 st.title("SaferNet with AI")
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 if uploaded_file is not None:
 
-        image = Image.open(uploaded_file)
+        u_img = Image.open(uploaded_file)
         st.image(image, caption='Uploaded Image', use_column_width=True)
 
         st.write("")
 
         if st.button('predict'):
                 st.write("Result...")
+                loaded_model = get_model()
+                image = np.asarray(u_img)/255
+                my_image= resize(image, (224,224)).reshape((1, 224*224*3)).T
                 start = time.time()
-                label = predict(uploaded_file)
+                label = loaded_model.predict_classes(my_image)
                 end = time.time()
                 # label = label.item()
                 print(label)
-                # st.write(end - start)
+                st.write(end - start)
 
                 # res = sign_names.get(label)
                 st.markdown(label)
+                
+    
+    
