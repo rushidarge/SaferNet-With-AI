@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import time
 import cv2
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 @st.cache(allow_output_mutation=True)
