@@ -1,5 +1,6 @@
 import streamlit as st
 import tensorflow
+from PIL import Image
 from tensorflow.keras.models import load_model
 import numpy as np
 import time
