@@ -1,6 +1,7 @@
 import streamlit as st
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array, load_img
+from PIL import Image
+# from tensorflow.keras.preprocessing.image import img_to_array, load_img
 import numpy as np
 import time
 
@@ -11,8 +12,8 @@ def get_model():
     
 def predict(image):
         loaded_model = get_model()
-        image = load_img(image)
-        image = img_to_array(image)
+        image = Image(image)
+        # image = img_to_array(image)
         image = image/255.0
         image = np.reshape(image,[1,224,224,3])
 
