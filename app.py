@@ -15,7 +15,7 @@ def get_model():
 def predict(image):
         loaded_model = get_model()
         size = (224,224)    
-        image = ImageOps.fit(upload_image, size, Image.ANTIALIAS)
+        image = ImageOps.fit(image, size, Image.ANTIALIAS)
         image = np.asarray(image)/255
         # image = cv2.imread(image)
         # image = cv2.resize(image/255, (224, 224))
