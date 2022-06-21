@@ -31,7 +31,7 @@ uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 if uploaded_file is not None:
 
         u_img = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded Image', use_column_width=True)
+        st.image(u_img, caption='Uploaded Image', use_column_width=True)
 
         st.write("")
 
