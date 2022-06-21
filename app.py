@@ -41,7 +41,7 @@ if uploaded_file is not None:
                 image = np.asarray(u_img)/255
                 my_image= resize(image, (224,224)).reshape((1, 224*224*3)).T
                 start = time.time()
-                label = loaded_model.predict_classes(my_image)
+                label = loaded_model.predict(my_image)
                 end = time.time()
                 # label = label.item()
                 print(label)
