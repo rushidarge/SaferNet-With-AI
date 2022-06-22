@@ -1,54 +1,44 @@
-import streamlit as st
-import tensorflow
-from tensorflow.keras.models import load_model
-from skimage.transform import resize
-import numpy as np
-import time
 import cv2
+import time
 from PIL import Image, ImageOps
-
+import numpy as np
+import streamlit as st
+import tensorflow as tf
 
 @st.cache(allow_output_mutation=True)
-def get_model():
-        model = load_model('MN21.h5')
-        return model 
+def load_model():
+    model=tf.keras.models.load_model('MN21.h5')
+    return model
+with st.spinner('Model is being loaded..'):
+    model=load_model()
+
+st.write("""# SaferNet with AI""")
+
+file = st.file_uploader("Please upload an image to classify", type=["jpg", "png", "jpeg"])
+def import_and_predict(image_data, model):
+    size = (224,224)    
+    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+    image = np.asarray(image)
+    img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.
     
-# def predict(image):
-#         loaded_model = get_model()
-#         size = (224,224)    
-#         image = ImageOps.fit(image, size, Image.ANTIALIAS)
-#         image = np.asarray(image)/255
-#         # image = cv2.imread(image)
-#         # image = cv2.resize(image/255, (224, 224))
-#         image = np.reshape(image,[1,224,224,3])
-
-#         classes = loaded_model.predict_classes(image)
-#         return classes 
-
-st.title("SaferNet with AI")
-
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
-if uploaded_file is not None:
-
-        u_img = Image.open(uploaded_file)
-        st.image(u_img, caption='Uploaded Image', use_column_width=True)
-
-        st.write("")
-
-        if st.button('predict'):
-                st.write("Result...")
-                loaded_model = get_model()
-                image = np.asarray(u_img)/255
-                my_image= resize(image, (224,224)).reshape((1, 224*224*3)).T
-                start = time.time()
-                label = loaded_model.predict(my_image)
-                end = time.time()
-                # label = label.item()
-                print(label)
-                st.write(end - start)
-
-                # res = sign_names.get(label)
-                st.markdown(label)
-                
+    img_reshape = img[np.newaxis,...]
     
-    
+    start = time.time()
+    prediction = model.predict(img_reshape)
+    end = time.time()
+    time_take = end - start
+    return prediction, time_take 
+
+if file is None:
+    st.text("Please upload an image file")
+else:
+    image = Image.open(file)
+    st.image(image, use_column_width=True)
+    predictions, time_take = import_and_predict(image, model)
+    st.write("Time taken to predict is ", time_take)
+    st.write(prediction)
+    if prediction[0][0] > 0.5:
+        st.write("This is SFW image :sunglasses:")
+    else:
+        st.write("This is NSFW image")
