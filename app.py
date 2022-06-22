@@ -36,9 +36,9 @@ else:
     image = Image.open(file)
     st.image(image, use_column_width=True)
     predictions, time_take = import_and_predict(image, model)
-    st.write("Time taken to predict is ", time_take, "seconds")
-    st.write(predictions)
-    if predictions[0][0] > 0.5:
+    st.write("Time taken to predict is ", time_take, "second")
+    # st.write(predictions)
+    if predictions[0][0] < 0.5:
         st.write("This is SFW image :sunglasses:")
     else:
         st.write("This is NSFW image")
