@@ -40,6 +40,8 @@ else:
     predictions, time_take = import_and_predict(image, model)
     st.write("Time taken to predict is ", time_take, "second")
     st.write(predictions)
+    print(predictions)
+    
     if predictions[0][0] < 0.5:
         st.write("This is SFW image :sunglasses:")
     else:
