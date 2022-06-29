@@ -24,6 +24,8 @@ def import_and_predict(image_data, model):
     
     img_reshape = img[np.newaxis,...]
     
+    st.write(img_reshape.shape)
+    
     start = time.time()
     prediction = model.predict(img_reshape)
     end = time.time()
