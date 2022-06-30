@@ -1,5 +1,3 @@
-gunicorn
-joblib
 numpy
 pandas
 streamlit
