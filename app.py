@@ -45,6 +45,11 @@ else:
     print(np.argmax(predictions))
     st.write(np.argmax(predictions))
     
+    st.write('each member of pred')
+    st.write(predictions.shape)
+    st.write(predictions[0])
+    st.write(predictions[1])
+    
     if predictions[0][0] < 0.5:
         st.write("This is SFW image :sunglasses:")
     else:
