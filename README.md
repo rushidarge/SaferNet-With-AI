@@ -28,9 +28,10 @@ Note : This version support 0.90 or lower version of chrome
 
 ## Demo (Working) Before after
 ### Before
-![before](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/before.JPG)
 
-![before](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/before1.JPG)
+![before](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/before.JPG)
+
+![before](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/before1.JPG)
 
 ![img](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/imageedit_1_3822010435.jpg)
 
@@ -39,9 +40,10 @@ Note : This version support 0.90 or lower version of chrome
 
 
 ### After
-![after](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/after.JPG)
 
-![after](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/after2.JPG)
+![after](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/after.JPG)
+
+![after](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/after2.JPG)
 
 
 ![img](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/extension%20demo2.JPG)
@@ -52,9 +54,16 @@ NSFW (Not safe for working) images I use from [Nudenets](https://github.com/notA
 
 ### Model
 If we use normal CNN model then the model size will be huge. Even if we train model with 3-5 layers model size gone upto 1 GB.
-We want to make it lightweight to work smoothly we use [MobileNet version 3](https://arxiv.org/abs/1704.04861).
+We want to make it lightweight to work smoothly we use [MobileNet version 2](https://arxiv.org/pdf/1801.04381.pdf).
 
 ## Future Work
-- change image source using threading
+- Change image source using threading
 - Add url change detection
 - Try to batch predict
+
+### Bibliography
+Dataset : https://github.com/notAI-tech/NudeNet
+Research paper : https://arxiv.org/abs/1801.04381
+Deployment : https://www.tensorflow.org/js
+Documentation : https://developer.chrome.com/docs/
+Guidance : https://www.appliedaicourse.com/
