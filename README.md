@@ -24,6 +24,8 @@ We can use some advanced computer vision techniques to filter out that content. 
 
 5. You will see smiley in extensions. 
 
+Note : This version support 0.90 or lower version of chrome
+
 ## Demo (Working) Before after
 ### Before
 ![before](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/before.JPG)
@@ -31,6 +33,10 @@ We can use some advanced computer vision techniques to filter out that content. 
 ![before](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/before1.JPG)
 
 ![img](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/imageedit_1_3822010435.jpg)
+
+## Install SaferNet with AI Extension
+![img](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/1_WoUNUcCUoXXnlaff5_da8g.png)
+
 
 ### After
 ![after](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/after.JPG)
