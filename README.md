@@ -50,7 +50,10 @@ Note : This version support 0.90 or lower version of chrome
 
 # Method of implementation
 ### Data
-NSFW (Not safe for working) images I use from [Nudenets](https://github.com/notAI-tech/NudeNet) and for SFW I use images from [unsplash](https://unsplash.com/)
+To collect NSFW (Not safe for working) images we need to scrap adult websites, blogs but in India those sites are blocked. To get the dataset, there is same kind of project which segment NSFW images, Nudenets we use this data to train our model.
+
+SFW data means any image it can be tree or building, it can be human or animal, so we need diverse collection of images and also those images are copyright free. For that we use Unsplash which provides free stock images. His lite dataset contains random images of ~25,000 photos. It can be used for both commercial and non-commercial usage.
+
 
 ### Model
 If we use normal CNN model then the model size will be huge. Even if we train model with 3-5 layers model size gone upto 1 GB.
