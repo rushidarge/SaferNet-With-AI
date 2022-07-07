@@ -12,7 +12,7 @@ We can use some advanced computer vision techniques to filter out that content. 
 
 ## To install extension
 
-1. Download the  `Safenet with AI.zip` file to your computer.
+1. Download the  `SaferNet with AI.zip` file to your computer.
 
 2. Extract file
 
@@ -62,8 +62,8 @@ We want to make it lightweight to work smoothly we use [MobileNet version 2](htt
 - Try to batch predict
 
 ### Bibliography
-Dataset : https://github.com/notAI-tech/NudeNet
-Research paper : https://arxiv.org/abs/1801.04381
-Deployment : https://www.tensorflow.org/js
-Documentation : https://developer.chrome.com/docs/
-Guidance : https://www.appliedaicourse.com/
+- Dataset : https://github.com/notAI-tech/NudeNet
+- Research paper : https://arxiv.org/abs/1801.04381
+- Deployment : https://www.tensorflow.org/js
+- Documentation : https://developer.chrome.com/docs/
+- Guidance : https://www.appliedaicourse.com/
