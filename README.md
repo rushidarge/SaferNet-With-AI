@@ -30,10 +30,15 @@ We can use some advanced computer vision techniques to filter out that content. 
 
 ![before](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/before1.JPG)
 
+![img](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/imageedit_1_3822010435.jpg)
+
 ### After
 ![after](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/after.JPG)
 
 ![after](https://github.com/rushidarge/Safenet-with-AI/blob/main/images/after2.JPG)
+
+
+![img](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/extension%20demo2.JPG)
 
 # Method of implementation
 ### Data
