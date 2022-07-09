@@ -6,7 +6,7 @@ The government has definitely taken a step in this direction by blocking some we
 
 We can use some advanced computer vision techniques to filter out that content. We cannot access social media servers and block content for everyone, but we can add filters on the user side. To add a filter between a website and a user, we can simply use a browser extension, so we can filter content with very low latency, and it is also easy to deploy by using JavaScript.
 
-## You can read blog about this on ![medium](https://rushikeshdarge.medium.com/case-study-safernet-with-ai-29f2c41eb739)
+## You can read blog about this on [medium](https://rushikeshdarge.medium.com/case-study-safernet-with-ai-29f2c41eb739)
 
 ## Flowchart of Chrome Extension
 ![Flowchart](https://github.com/rushidarge/SaferNet-With-AI/blob/main/images/U41ntitled%20presentation.jpg)
